@@ -77,6 +77,7 @@ Route::get('/buffer/change/{buffer_id}', 'HomeController@bufferChange')->name('b
 Route::resource('subscriptions', 'SubscriptionController');
 Route::get('/settings', 'PagesController@settings')->name('settings');;
 Route::get('/social-accounts', 'PagesController@socialAccounts')->name('social-accounts');
+Route::get('/newTab', 'PagesController@newTab')->name('newTab');
 Route::get('/users/confirmation/', 'PagesController@confirmation');
 Route::get('/users/confirmation/{token}', 'PagesController@confirmationToken')->name('confirmation');
 Route::post('/users/confirmation/', 'PagesController@confirmationPost');
@@ -97,6 +98,7 @@ Route::get('/analytics/', 'PagesController@analytics')->name('analytics');
 Route::get('/calendar/', 'PagesController@calendar')->name('calendar');
 Route::get('/support/', 'PagesController@support')->name('support');
 Route::get('/start/', 'PagesController@start')->name('start');
+//Route::get('/newTab/', 'newTabController@newTab')->name('newTab');
 
 
 Route::post('/settings/timezone/', 'PagesController@history')->name('saveTimezone');
