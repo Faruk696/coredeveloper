@@ -154,6 +154,12 @@ class PagesController extends Controller
         $profiles = SocialAccounts::where('user_id', Auth::id())->get();
         return view('pages.social-accounts')->with('profiles', $profiles)->with('user', $user);
     }
+    public function newTab(Request $request)
+    {
+        $user = User::find(Auth::id());
+        $profiles = SocialAccounts::where('user_id', Auth::id())->paginate(15);
+        return view('pages.newFile')->with('profiles', $profiles)->with('user', $user);
+    }
 
     public function analytics()
     {
